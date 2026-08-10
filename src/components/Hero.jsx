@@ -2,7 +2,8 @@ function Hero() {
   return (
     <section className="hero" id="home">
       <div className="container hero__inner">
-        {/* Left content */}
+
+        {/* Hero content */}
         <div className="hero__content">
           <div className="hero__eyebrow">
             <span className="hero__status" />
@@ -42,115 +43,81 @@ function Hero() {
               href="https://github.com/subarna1112"
               target="_blank"
               rel="noreferrer"
-              aria-label="GitHub"
             >
               GitHub
             </a>
 
             <span>•</span>
 
-            <a
-              href="#contact"
-              aria-label="Email"
-            >
+            <a href="#contact">
               Email
             </a>
 
             <span>•</span>
 
-            <a
-              href="#contact"
-              aria-label="LinkedIn"
-            >
+            <a href="#contact">
               LinkedIn
             </a>
           </div>
         </div>
 
-        {/* Visual side */}
-        <div className="hero__visual" aria-hidden="true">
+        {/* Photo visual */}
+        <div className="hero__visual">
+
           <div className="hero__blob hero__blob--one" />
           <div className="hero__blob hero__blob--two" />
 
-          <div className="hero__card">
-            <div className="hero__card-top">
-              <span className="hero__card-dot" />
-              <span className="hero__card-dot" />
-              <span className="hero__card-dot" />
+          <div className="hero__photo-card">
 
-              <span className="hero__card-label">
-                currently.building()
-              </span>
+            <div className="hero__photo-frame">
+              <img
+                src="/images/barna-profile.png"
+                alt="Subarna Sen"
+                className="hero__photo"
+              />
+
+              <div className="hero__photo-tag">
+                <span>✦</span>
+                developer in progress
+              </div>
             </div>
 
-            <div className="hero__code">
-              <span className="code-line">
-                <span className="code-purple">const</span>{' '}
-                <span className="code-pink">barna</span>{' '}
-                <span className="code-white">=</span>
-              </span>
-
-              <span className="code-line code-indent">
-                <span className="code-white">{'{'}</span>
-              </span>
-
-              <span className="code-line code-indent">
-                <span className="code-blue">role</span>
-                <span className="code-white">:</span>{' '}
-                <span className="code-green">
-                  "developer"
+            <div className="hero__profile-info">
+              <div>
+                <span className="hero__profile-label">
+                  HI, I'M
                 </span>
-                <span className="code-white">,</span>
-              </span>
 
-              <span className="code-line code-indent">
-                <span className="code-blue">learning</span>
-                <span className="code-white">:</span>{' '}
-                <span className="code-green">
-                  "everyday"
-                </span>
-                <span className="code-white">,</span>
-              </span>
+                <h2>Barna.</h2>
 
-              <span className="code-line code-indent">
-                <span className="code-blue">coffee</span>
-                <span className="code-white">:</span>{' '}
-                <span className="code-green">
-                  true
-                </span>
-                <span className="code-white">,</span>
-              </span>
+                <p>
+                  BCA · Software & Web Developer
+                </p>
+              </div>
 
-              <span className="code-line code-indent">
-                <span className="code-blue">creative</span>
-                <span className="code-white">:</span>{' '}
-                <span className="code-green">
-                  true
-                </span>
-              </span>
-
-              <span className="code-line code-indent">
-                <span className="code-white">{'}'}</span>
-              </span>
+              <div className="hero__profile-symbol">
+                &lt;/&gt;
+              </div>
             </div>
 
-            <div className="hero__card-footer">
-              <span>⌘</span>
-              <span>building something cool...</span>
-              <span className="hero__cursor">▋</span>
-            </div>
           </div>
 
           <div className="hero__sticker hero__sticker--top">
-            &lt;code /&gt;
+            code + creativity
           </div>
 
           <div className="hero__sticker hero__sticker--bottom">
-            ✦ creative mind
+            📷 photography
           </div>
 
-          <div className="hero__star hero__star--one">✦</div>
-          <div className="hero__star hero__star--two">✦</div>
+          <div className="hero__star hero__star--one">
+            ✦
+          </div>
+
+          <div className="hero__star hero__star--two">
+            ✦
+          </div>
+
         </div>
       </div>
 

@@ -1,45 +1,73 @@
 const journey = [
-
-
-  {
+  
+    {
     year: '2023 — 2027',
     type: 'EDUCATION',
-    title: 'Bachelor of Computer Applications',
-    organization: 'BCA',
+    title: 'BCA (Honours) — Computer Applications',
+    organization: 'Techno International New Town',
     description:
-      'Building a strong foundation across programming, databases, web development, software concepts and computer science fundamentals.',
-    tags: ['Programming', 'DBMS', 'Web Development'],
+      'Building a strong foundation in programming, databases, web development and computer applications while developing practical projects alongside my academic journey.',
+    achievements: [
+      'Programming & problem solving',
+      'Web development',
+      'Database systems',
+      'Software development fundamentals',
+    ],
+    tags: ['BCA', 'Computer Applications', 'Development'],
+    accent: 'violet',
   },
-
-
-    {
-    year: '2025',
-    type: 'HACKATHON',
-    title: 'Smart India Hackathon',
-    organization: 'SIH 2025',
+  
+  {
+    year: 'JAN 2025 — NOV 2025',
+    type: 'WORK EXPERIENCE',
+    title: 'Social Media Content Designer',
+    organization: 'Sundoor',
     description:
-      'Worked on "Where is the Bus", a technology-focused solution developed around a real-world transportation problem.',
-    tags: ['Problem Solving', 'Teamwork', 'React'],
+      'Designed and managed visual content for social media, combining creative thinking with digital content management to support brand communication and promotional campaigns.',
+    achievements: [
+      'Created social media graphics and promotional content',
+      'Developed original designs aligned with campaign goals',
+      'Edited visuals using Photoshop and Illustrator',
+      'Published and scheduled social media content',
+    ],
+    tags: ['Photoshop', 'Illustrator', 'Content Design'],
+    accent: 'coral',
   },
 
   {
-    year: '2025 — Present',
+    year: 'INTERNSHIP',
+    type: 'GREEN SKILLS INTERN',
+    title: 'Green Skills Intern',
+    organization: '1M1B — 1 Million for 1 Billion',
+    description:
+      'Contributed to a sustainability-focused Waste Management System while gaining practical exposure to website development and collaborative project work.',
+    achievements: [
+      'Worked on a Waste Management System project',
+      'Contributed to sustainability-focused initiatives',
+      'Collaborated with a cross-functional team',
+      'Developed teamwork and project management skills',
+    ],
+    tags: ['Web Development', 'Sustainability', 'Teamwork'],
+    accent: 'lime',
+  },
+
+
+
+  {
+    year: 'CURRENTLY',
     type: 'BUILDING',
-    title: 'Personal Projects',
-    organization: 'Independent',
+    title: 'Growing as a Developer',
+    organization: 'Independent Projects & Learning',
     description:
-      'Learning by building practical projects across frontend development, databases, web applications and problem-solving.',
-    tags: ['React', 'JavaScript', 'SQL', 'Git'],
-  },
-
-  {
-    year: 'NEXT',
-    type: 'GOAL',
-    title: 'Software Development Internship',
-    organization: 'Looking for the right opportunity',
-    description:
-      'Ready to contribute to a real development team, learn from experienced developers and turn my skills into production experience.',
-    tags: ['Open to Learn', 'Open to Work'],
+      'Currently expanding my development skills through React.js, the MERN stack and Machine Learning while building practical projects and strengthening my full-stack foundation.',
+    achievements: [
+      'Learning React.js',
+      'Exploring the MERN stack',
+      'Exploring Machine Learning',
+      'Building personal projects',
+    ],
+    tags: ['React.js', 'MERN', 'Machine Learning', 'GitHub'],
+    accent: 'blue',
   },
 ];
 
@@ -51,18 +79,18 @@ function Experience() {
         {/* Header */}
         <div className="experience__header">
           <span className="section-label">
-            04 — MY JOURNEY
+            04 — EXPERIENCE & JOURNEY
           </span>
 
           <h2 className="section-title">
-            Still learning.
-            <span> Still building.</span>
+            More than just
+            <span> code.</span>
           </h2>
 
           <p className="experience__intro">
-            My journey so far has been a mix of academics,
-            experimentation, teamwork and building things that
-            solve actual problems.
+            My journey combines technology, creativity and real-world
+            experience — from designing digital content to building
+            projects and growing as a developer.
           </p>
         </div>
 
@@ -71,11 +99,11 @@ function Experience() {
 
           {journey.map((item, index) => (
             <article
-              className="journey-item"
+              className={`journey-item journey-item--${item.accent}`}
               key={`${item.year}-${item.title}`}
             >
 
-              {/* Timeline side */}
+              {/* Timeline meta */}
               <div className="journey-item__meta">
                 <span className="journey-item__year">
                   {item.year}
@@ -104,6 +132,17 @@ function Experience() {
 
                 <p>{item.description}</p>
 
+                {/* Achievements */}
+                <ul className="journey-item__achievements">
+                  {item.achievements.map((achievement) => (
+                    <li key={achievement}>
+                      <span>✦</span>
+                      {achievement}
+                    </li>
+                  ))}
+                </ul>
+
+                {/* Tags */}
                 <div className="journey-item__tags">
                   {item.tags.map((tag) => (
                     <span key={tag}>

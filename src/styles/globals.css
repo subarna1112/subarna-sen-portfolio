@@ -2355,3 +2355,69 @@ p {
     font-size: 1.35rem;
   }
 }
+
+/* ========================================
+   EXPERIENCE ACHIEVEMENTS
+   ======================================== */
+
+.journey-item__achievements {
+  display: grid;
+  gap: 0.55rem;
+
+  margin-top: 1.25rem;
+}
+
+.journey-item__achievements li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+
+  color: var(--color-text);
+
+  font-size: 0.75rem;
+  line-height: 1.6;
+}
+
+.journey-item__achievements li span {
+  flex-shrink: 0;
+
+  color: var(--journey-accent, var(--color-coral));
+}
+
+/* Journey accent colours */
+
+.journey-item {
+  --journey-accent: var(--color-coral);
+}
+
+.journey-item--coral {
+  --journey-accent: var(--color-coral);
+}
+
+.journey-item--lime {
+  --journey-accent: var(--color-lime);
+}
+
+.journey-item--violet {
+  --journey-accent: var(--color-violet);
+}
+
+.journey-item--blue {
+  --journey-accent: #60a5fa;
+}
+
+.journey-item__type {
+  color: var(--journey-accent);
+}
+
+.journey-item__number {
+  color: var(--journey-accent);
+}
+
+.journey-item__line span {
+  border-color: var(--journey-accent);
+}
+
+.journey-item:hover .journey-item__line span {
+  background: var(--journey-accent);
+}

@@ -1,21 +1,6 @@
 const journey = [
-  
-    {
-    year: '2023 — 2027',
-    type: 'EDUCATION',
-    title: 'BCA (Honours) — Computer Applications',
-    organization: 'Techno International New Town',
-    description:
-      'Building a strong foundation in programming, databases, web development and computer applications while developing practical projects alongside my academic journey.',
-    achievements: [
-      'Programming & problem solving',
-      'Web development',
-      'Database systems',
-      'Software development fundamentals',
-    ],
-    tags: ['BCA', 'Computer Applications', 'Development'],
-    accent: 'violet',
-  },
+
+
   
   {
     year: 'JAN 2025 — NOV 2025',

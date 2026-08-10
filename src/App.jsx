@@ -1,8 +1,11 @@
 function App() {
   return (
-    <main>
-      <h1>Subarna Sen</h1>
-      <p>My portfolio is under construction 🚧</p>
+    <main className="container">
+      <h1>Barna is building something ✨</h1>
+
+      <p>
+        Subarna Sen · Software & Web Developer
+      </p>
     </main>
   );
 }

@@ -3029,3 +3029,233 @@ p {
   }
 
 }
+
+/* ========================================
+   GITHUB / BUILDING IN PUBLIC
+   ======================================== */
+
+.github-section {
+  background: var(--color-bg);
+}
+
+.github-section__header {
+  display: grid;
+
+  gap: 2rem;
+
+  margin-bottom: 3rem;
+}
+
+.github-section__header > p {
+  max-width: 430px;
+
+  color: var(--color-text-muted);
+
+  font-size: 0.9rem;
+
+  line-height: 1.8;
+}
+
+/* ========================================
+   GITHUB PROFILE CARD
+   ======================================== */
+
+.github-profile {
+  display: flex;
+
+  align-items: center;
+
+  gap: 1.5rem;
+
+  padding: 1.5rem;
+
+  border: 1px solid var(--color-border);
+
+  border-radius: var(--radius-lg);
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--color-surface),
+      var(--color-surface-soft)
+    );
+
+  transition:
+    transform 300ms ease,
+    border-color 300ms ease,
+    box-shadow 300ms ease;
+}
+
+.github-profile:hover {
+  transform: translateY(-4px);
+
+  border-color: var(--color-coral);
+
+  box-shadow: var(--shadow-soft);
+}
+
+/* ========================================
+   GITHUB ICON
+   ======================================== */
+
+.github-profile__icon {
+  display: grid;
+
+  width: 58px;
+  height: 58px;
+
+  flex-shrink: 0;
+
+  place-items: center;
+
+  border: 1px solid var(--color-border);
+
+  border-radius: 50%;
+
+  background: var(--color-bg);
+
+  color: var(--color-text);
+}
+
+.github-profile__icon svg {
+  width: 29px;
+  height: 29px;
+}
+
+/* ========================================
+   PROFILE CONTENT
+   ======================================== */
+
+.github-profile__content {
+  flex: 1;
+}
+
+.github-profile__label {
+  display: block;
+
+  margin-bottom: 0.25rem;
+
+  color: var(--color-coral);
+
+  font-size: 0.6rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.12em;
+}
+
+.github-profile__content h3 {
+  margin-bottom: 0.3rem;
+
+  color: var(--color-text);
+
+  font-size: 1.1rem;
+
+  letter-spacing: -0.03em;
+}
+
+.github-profile__content p {
+  color: var(--color-text-muted);
+
+  font-size: 0.75rem;
+}
+
+/* ========================================
+   GITHUB BUTTON
+   ======================================== */
+
+.github-profile__button {
+  flex-shrink: 0;
+}
+
+.github-profile__button span {
+  margin-left: 0.3rem;
+}
+
+/* ========================================
+   CODING INTERESTS
+   ======================================== */
+
+.github-interests {
+  display: flex;
+
+  align-items: center;
+
+  gap: 1.5rem;
+
+  margin-top: 2rem;
+
+  padding-top: 1.5rem;
+
+  border-top: 1px solid var(--color-border);
+}
+
+.github-interests__label {
+  flex-shrink: 0;
+
+  color: var(--color-text-muted);
+
+  font-size: 0.6rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.08em;
+}
+
+.github-interests__tags {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 0.5rem;
+}
+
+.github-interests__tags span {
+  padding: 0.4rem 0.7rem;
+
+  border: 1px solid var(--color-border);
+
+  border-radius: var(--radius-pill);
+
+  background: var(--color-surface);
+
+  color: var(--color-text);
+
+  font-size: 0.65rem;
+
+  transition:
+    border-color 200ms ease,
+    transform 200ms ease;
+}
+
+.github-interests__tags span:hover {
+  transform: translateY(-2px);
+
+  border-color: var(--color-coral);
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
+@media (max-width: 650px) {
+
+  .github-profile {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .github-profile__button {
+    width: 100%;
+  }
+
+  .github-interests {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 1rem;
+  }
+
+}

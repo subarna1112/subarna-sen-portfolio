@@ -7,6 +7,7 @@ import Experience from './components/Experience';
 import Education from './components/Education';
 import Photography from './components/photography';
 import GitHub from './components/GitHub';
+import Contact from './components/Contact';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Education />
         <Photography />
         <GitHub />
+        <Contact />
 
       </main>
     </>

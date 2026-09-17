@@ -1,5 +1,23 @@
 const githubUsername = 'subarna1112';
 
+const socialLinks = [
+  {
+    name: 'Instagram',
+    shortName: 'IG',
+    url: 'https://www.instagram.com/raabriiiii/',
+  },
+  {
+    name: 'LinkedIn',
+    shortName: 'IN',
+    url: 'https://www.linkedin.com/in/subarnasen1707/',
+  },
+  {
+    name: 'Facebook',
+    shortName: 'FB',
+    url: 'https://www.facebook.com/share/1EdVJYmvfy/',
+  },
+];
+
 function GitHub() {
   return (
     <section className="github-section section" id="github">
@@ -67,6 +85,42 @@ function GitHub() {
             View GitHub
             <span>↗</span>
           </a>
+
+        </div>
+
+        {/* Social Links */}
+        <div className="social-links">
+
+          <span className="social-links__label">
+            FIND ME ELSEWHERE
+          </span>
+
+          <div className="social-links__list">
+
+            {socialLinks.map((social) => (
+              <a
+                key={social.name}
+                href={social.url}
+                target="_blank"
+                rel="noreferrer"
+                className="social-link"
+                aria-label={`Visit my ${social.name} profile`}
+              >
+                <span className="social-link__icon">
+                  {social.shortName}
+                </span>
+
+                <span className="social-link__name">
+                  {social.name}
+                </span>
+
+                <span className="social-link__arrow">
+                  ↗
+                </span>
+              </a>
+            ))}
+
+          </div>
 
         </div>
 

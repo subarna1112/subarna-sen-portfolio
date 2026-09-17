@@ -5362,3 +5362,653 @@ header {
     display: none;
   }
 }
+
+/* =========================================================
+   PHASE 13.3 — FULL RESPONSIVE POLISH
+   ========================================================= */
+
+/* ---------- Global safety ---------- */
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+body {
+  width: 100%;
+}
+
+.container {
+  width: min(
+    calc(100% - (var(--page-padding) * 2)),
+    var(--container-width)
+  );
+}
+
+/* Prevent long text / URLs from breaking layouts */
+h1,
+h2,
+h3,
+h4,
+p,
+a,
+span {
+  overflow-wrap: anywhere;
+}
+
+/* ---------- Fixed navbar spacing ---------- */
+
+main {
+  width: 100%;
+}
+
+section[id] {
+  scroll-margin-top: 90px;
+}
+
+/* ---------- Tablet ---------- */
+
+@media (min-width: 768px) and (max-width: 1099px) {
+
+  :root {
+    --page-padding: 2rem;
+  }
+
+  .section {
+    padding: 6rem 0;
+  }
+
+  .section-title {
+    font-size: clamp(2.6rem, 6vw, 4.2rem);
+  }
+
+  /* Hero */
+
+  .hero {
+    padding-top: 10rem;
+  }
+
+  .hero__inner {
+    gap: 3rem;
+  }
+
+  .hero__title {
+    font-size: clamp(3.2rem, 8vw, 5.5rem);
+  }
+
+  .hero__visual {
+    min-height: 460px;
+  }
+
+  /* About */
+
+  .about__grid {
+    gap: 2rem;
+  }
+
+  /* Projects */
+
+  .project-card {
+    grid-template-columns:
+      minmax(260px, 0.85fr)
+      minmax(0, 1.15fr);
+  }
+
+  .project-card__visual {
+    min-height: 360px;
+  }
+
+  .project-card__body {
+    padding: 2rem;
+  }
+
+  /* Experience */
+
+  .journey-item {
+    grid-template-columns: 70px 22px minmax(0, 1fr);
+  }
+
+  /* Contact */
+
+  .contact__grid {
+    gap: 2rem;
+  }
+
+  .contact-socials__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+  :root {
+    --page-padding: 1rem;
+  }
+
+  /* Sections */
+
+  .section {
+    padding: 5rem 0;
+  }
+
+  .section-title {
+    max-width: 100%;
+    font-size: clamp(2.35rem, 12vw, 4rem);
+  }
+
+  /* ---------- Hero ---------- */
+
+  .hero {
+    min-height: auto;
+    padding-top: 8.5rem;
+    padding-bottom: 5rem;
+  }
+
+  .hero__inner {
+    gap: 2.75rem;
+  }
+
+  .hero__content {
+    max-width: 100%;
+  }
+
+  .hero__eyebrow {
+    max-width: 100%;
+    margin-bottom: 1.25rem;
+    padding: 0.45rem 0.7rem;
+    font-size: 0.68rem;
+  }
+
+  .hero__title {
+    max-width: 100%;
+    font-size: clamp(2.8rem, 14vw, 4.5rem);
+    line-height: 0.98;
+  }
+
+  .hero__description {
+    max-width: 100%;
+    margin-top: 1.4rem;
+    font-size: 0.9rem;
+    line-height: 1.75;
+  }
+
+  .hero__actions {
+    width: 100%;
+    margin-top: 1.6rem;
+  }
+
+  .hero__actions .button {
+    width: 100%;
+  }
+
+  .hero__socials {
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+    font-size: 0.75rem;
+  }
+
+  .hero__visual {
+    min-height: 360px;
+  }
+
+  .hero__photo-card {
+    width: min(100%, 360px);
+  }
+
+  .hero__sticker--top {
+    right: 0;
+  }
+
+  .hero__sticker--bottom {
+    left: 0;
+  }
+
+  /* ---------- About ---------- */
+
+  .about__header {
+    margin-bottom: 2.5rem;
+  }
+
+  .about__grid {
+    gap: 2rem;
+  }
+
+  .about__main {
+    max-width: 100%;
+  }
+
+  .about__lead {
+    font-size: 1.25rem;
+    line-height: 1.45;
+  }
+
+  .about__main p:not(.about__lead) {
+    font-size: 0.9rem;
+    line-height: 1.8;
+  }
+
+  .about__cards {
+    gap: 0.75rem;
+  }
+
+  .about__card {
+    padding: 1.15rem;
+  }
+
+  .about__facts {
+    margin-top: 2.5rem;
+  }
+
+  .about__fact {
+    padding: 1.15rem 0;
+  }
+
+  /* ---------- Tech Stack ---------- */
+
+  .tech-stack__header {
+    margin-bottom: 2.5rem;
+  }
+
+  .tech-stack__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tech-card {
+    min-height: 260px;
+    padding: 1.25rem;
+  }
+
+  /* ---------- Projects ---------- */
+
+  .projects__header {
+    margin-bottom: 2.5rem;
+  }
+
+  .projects__intro {
+    max-width: 100%;
+    font-size: 0.85rem;
+  }
+
+  .projects__list {
+    gap: 1.25rem;
+  }
+
+  .project-card {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card__visual {
+    min-height: 240px;
+    border-right: 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .project-card__body {
+    padding: 1.25rem;
+  }
+
+  .project-card__heading h3 {
+    font-size: clamp(1.4rem, 8vw, 2rem);
+  }
+
+  .project-card__description {
+    font-size: 0.78rem;
+  }
+
+  .project-card__features li {
+    font-size: 0.7rem;
+  }
+
+  .project-card__links {
+    flex-direction: column;
+  }
+
+  .project-card__links a,
+  .project-card__link-disabled {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  /* ---------- Experience ---------- */
+
+  .experience__header {
+    margin-bottom: 3rem;
+  }
+
+  .experience__intro {
+    font-size: 0.85rem;
+  }
+
+  .journey-item {
+    grid-template-columns: 45px 16px minmax(0, 1fr);
+    min-height: 0;
+  }
+
+  .journey-item__year {
+    font-size: 0.6rem;
+  }
+
+  .journey-item__number {
+    font-size: 0.58rem;
+  }
+
+  .journey-item__content {
+    padding-left: 1rem;
+    padding-bottom: 2.75rem;
+  }
+
+  .journey-item__content h3 {
+    font-size: 1.25rem;
+  }
+
+  .journey-item__content h4 {
+    font-size: 0.72rem;
+  }
+
+  .journey-item__content p {
+    font-size: 0.76rem;
+    line-height: 1.75;
+  }
+
+  .journey-item__achievements li {
+    font-size: 0.7rem;
+  }
+
+  /* ---------- Education ---------- */
+
+  .education__header {
+    margin-bottom: 2.5rem;
+  }
+
+  .education-card {
+    padding: 1.25rem;
+  }
+
+  .education-card__number {
+    top: 1.25rem;
+    right: 1.25rem;
+  }
+
+  .education-card__content h3 {
+    padding-right: 2rem;
+    font-size: 1.35rem;
+  }
+
+  .certifications {
+    margin-top: 4.5rem;
+  }
+
+  .certifications__grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* ---------- Creative Work ---------- */
+
+  .photography__header {
+    margin-bottom: 2.5rem;
+  }
+
+  .photography__header > p {
+    max-width: 100%;
+    font-size: 0.82rem;
+  }
+
+  .creative-gallery {
+    grid-template-columns: 1fr;
+    gap: 0.9rem;
+  }
+
+  .creative-card__image {
+    aspect-ratio: 4 / 3;
+  }
+
+  /* ---------- GitHub ---------- */
+
+  .github-section__header {
+    margin-bottom: 2.5rem;
+  }
+
+  .github-section__header > p {
+    max-width: 100%;
+    font-size: 0.82rem;
+  }
+
+  .github-profile {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 1.25rem;
+  }
+
+  .github-profile__button {
+    width: 100%;
+  }
+
+  .github-repositories {
+    margin-top: 2.5rem;
+  }
+
+  .github-repositories__heading {
+    align-items: flex-start;
+  }
+
+  .github-repositories__heading h3 {
+    font-size: 1.5rem;
+  }
+
+  .github-repositories__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .github-repo {
+    min-height: auto;
+    padding: 1.15rem;
+  }
+
+  .github-repo > p {
+    min-height: 0;
+  }
+
+  .github-interests {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  /* ---------- Resume ---------- */
+
+  .resume__header {
+    margin-bottom: 2.5rem;
+  }
+
+  .resume-card {
+    padding: 1.25rem;
+  }
+
+  .resume-card__actions {
+    flex-direction: column;
+  }
+
+  .resume-card__actions .button {
+    width: 100%;
+  }
+
+  /* ---------- Contact ---------- */
+
+  .contact {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  .contact__header {
+    margin-bottom: 2.5rem;
+  }
+
+  .contact__header > p {
+    font-size: 0.85rem;
+  }
+
+  .contact__grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .contact-card {
+    min-height: 82px;
+    padding: 0.9rem;
+  }
+
+  .contact-card__label {
+    min-width: 58px;
+    font-size: 0.52rem;
+  }
+
+  .contact-card__value {
+    min-width: 0;
+    font-size: 0.68rem;
+  }
+
+  .contact-socials {
+    margin-top: 1.75rem;
+  }
+
+  .contact-socials__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-social {
+    min-height: 68px;
+    flex-direction: row;
+    align-items: center;
+    padding: 0.85rem;
+  }
+
+  .contact-social__name {
+    flex: 1;
+  }
+
+  .contact-social__arrow {
+    position: static;
+  }
+
+  .contact-form {
+    padding: 1.15rem;
+  }
+
+  .contact-form__row {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form input {
+    min-height: 50px;
+  }
+
+  .contact-form textarea {
+    min-height: 150px;
+  }
+
+  .contact-form .button {
+    width: 100%;
+  }
+}
+
+/* =========================================================
+   SMALL PHONES — 320px to 400px
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+  :root {
+    --page-padding: 0.85rem;
+  }
+
+  .navbar {
+    padding: 0.7rem 0.75rem;
+  }
+
+  .navbar__inner {
+    width: 100%;
+  }
+
+  .navbar__logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .navbar__menu {
+    width: 40px;
+    height: 40px;
+  }
+
+  .hero {
+    padding-top: 8rem;
+  }
+
+  .hero__title {
+    font-size: clamp(2.65rem, 14vw, 3.8rem);
+  }
+
+  .hero__visual {
+    min-height: 320px;
+  }
+
+  .hero__photo-card {
+    width: min(100%, 330px);
+  }
+
+  .hero__sticker {
+    padding: 0.55rem 0.7rem;
+    font-size: 0.58rem;
+  }
+
+  .section {
+    padding: 4.5rem 0;
+  }
+
+  .project-card__visual {
+    min-height: 220px;
+  }
+
+  .project-card__shape {
+    width: 110px;
+    height: 110px;
+  }
+
+  .contact-card__arrow {
+    font-size: 0.75rem;
+  }
+
+  .certificate {
+    grid-template-columns: 25px minmax(0, 1fr) 18px;
+    gap: 0.5rem;
+    padding: 0.75rem;
+  }
+
+  .certificate h3 {
+    font-size: 0.66rem;
+  }
+}
+
+/* =========================================================
+   TOUCH DEVICES
+   Remove hover movement that feels awkward on phones.
+   ========================================================= */
+
+@media (hover: none) {
+
+  .project-card:hover,
+  .tech-card:hover,
+  .about__card:hover,
+  .education-card:hover,
+  .creative-card:hover,
+  .github-repo:hover,
+  .contact-card:hover,
+  .contact-social:hover,
+  .resume-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}

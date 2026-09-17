@@ -4887,3 +4887,49 @@ header {
     padding-top: 12rem;
   }
 }
+
+/* =========================================================
+   PHASE 13.1 — SCROLL REVEAL ANIMATIONS
+   ========================================================= */
+
+.reveal-ready {
+  opacity: 0;
+  transform: translateY(28px);
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 700ms ease,
+    transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Subtle stagger for major section content */
+.reveal-visible > .container > *:nth-child(1) {
+  transition-delay: 0ms;
+}
+
+.reveal-visible > .container > *:nth-child(2) {
+  transition-delay: 80ms;
+}
+
+.reveal-visible > .container > *:nth-child(3) {
+  transition-delay: 140ms;
+}
+
+/* Keep Hero immediately visible */
+.hero {
+  opacity: 1;
+  transform: none;
+}
+
+/* Accessibility — respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .reveal-ready,
+  .reveal-visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

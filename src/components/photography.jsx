@@ -15,7 +15,7 @@ function Photography() {
 
           <div>
             <span className="section-label">
-              07 — CREATIVE WORK
+              08 — CREATIVE WORK
             </span>
 
             <h2 className="section-title">

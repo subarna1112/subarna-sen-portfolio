@@ -22,7 +22,7 @@ function Contact() {
       <div className="container">
         <div className="contact__header">
           <span className="section-label">
-            09 — LET'S CONNECT
+            10 — LET'S CONNECT
           </span>
 
           <h2 className="section-title">

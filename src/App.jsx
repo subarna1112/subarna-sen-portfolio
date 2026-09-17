@@ -8,6 +8,7 @@ import Education from './components/Education';
 import Photography from './components/photography';
 import GitHub from './components/GitHub';
 import Contact from './components/Contact';
+import Resume from './components/Resume';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Projects />
         <Experience />
         <Education />
+        <Resume />
         <Photography />
         <GitHub />
         <Contact />

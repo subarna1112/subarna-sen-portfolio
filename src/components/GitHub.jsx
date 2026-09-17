@@ -28,7 +28,7 @@ function GitHub() {
 
           <div>
             <span className="section-label">
-              08 — BUILDING IN PUBLIC
+              09 — BUILDING IN PUBLIC
             </span>
 
             <h2 className="section-title">

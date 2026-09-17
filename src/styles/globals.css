@@ -3732,3 +3732,785 @@ p {
     font-size: 0.7rem;
   }
 }
+
+/* ================================
+   GITHUB REPOSITORIES
+================================ */
+
+.github-repositories {
+  margin-top: 2rem;
+}
+
+.github-repositories__heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.github-repositories__label {
+  display: block;
+  margin-bottom: 0.45rem;
+  color: var(--color-coral);
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.github-repositories__heading h3 {
+  color: var(--color-text);
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  letter-spacing: -0.04em;
+}
+
+.github-repositories__count {
+  flex-shrink: 0;
+  color: var(--color-text-muted);
+  font-family: monospace;
+  font-size: 0.62rem;
+  font-weight: 700;
+}
+
+.github-repositories__grid {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.github-repo {
+  position: relative;
+  padding: 1.25rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  transition:
+    transform 250ms ease,
+    border-color 250ms ease,
+    box-shadow 250ms ease;
+}
+
+.github-repo:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-coral);
+  box-shadow: var(--shadow-soft);
+}
+
+.github-repo__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.github-repo__folder {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  color: var(--color-coral);
+  font-size: 1rem;
+}
+
+.github-repo__arrow {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  color: var(--color-text-muted);
+  font-size: 0.75rem;
+  text-decoration: none;
+  transition:
+    transform 250ms ease,
+    color 250ms ease,
+    border-color 250ms ease;
+}
+
+.github-repo__arrow:hover {
+  transform: translate(2px, -2px);
+  border-color: var(--color-coral);
+  color: var(--color-coral);
+}
+
+.github-repo h4 {
+  margin-bottom: 0.55rem;
+  overflow-wrap: anywhere;
+  color: var(--color-text);
+  font-size: 0.95rem;
+  font-weight: 800;
+}
+
+.github-repo > p {
+  min-height: 3.2rem;
+  margin-bottom: 1.25rem;
+  color: var(--color-text-muted);
+  font-size: 0.75rem;
+  line-height: 1.7;
+}
+
+.github-repo__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  color: var(--color-text-muted);
+  font-family: monospace;
+  font-size: 0.62rem;
+}
+
+.github-repo__meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.github-repo__language-dot {
+  width: 7px;
+  height: 7px;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+}
+
+.github-state {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  min-height: 90px;
+  padding: 1rem 1.25rem;
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-lg);
+  color: var(--color-text-muted);
+}
+
+.github-state p {
+  font-size: 0.75rem;
+}
+
+.github-state__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-coral);
+  animation: github-pulse 1.2s ease-in-out infinite;
+}
+
+.github-state--error {
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.github-state--error a {
+  flex-shrink: 0;
+  color: var(--color-coral);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+@keyframes github-pulse {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(0.85);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (min-width: 700px) {
+  .github-repositories__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .github-repo {
+    padding: 1.5rem;
+  }
+}
+
+@media (min-width: 1000px) {
+  .github-repositories {
+    margin-top: 2.5rem;
+  }
+
+  .github-repositories__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .github-repositories__heading {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .github-state--error {
+    align-items: start;
+    flex-direction: column;
+  }
+}
+
+/* =========================================================
+   DESKTOP COMPOSITION + CONTACT REDESIGN
+   ========================================================= */
+
+/* ---------- Wider overall website ---------- */
+
+:root {
+  --container-width: 1380px;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --page-padding: 2.5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  :root {
+    --page-padding: 3.5rem;
+  }
+}
+
+@media (min-width: 1500px) {
+  :root {
+    --container-width: 1440px;
+    --page-padding: 4rem;
+  }
+}
+
+
+/* =========================================================
+   GITHUB — BIGGER DESKTOP COMPOSITION
+   ========================================================= */
+
+.github-section {
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+}
+
+.github-section__header {
+  grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+  align-items: end;
+  gap: 5rem;
+  margin-bottom: 3.5rem;
+}
+
+.github-section__header > p {
+  max-width: 520px;
+  font-size: 0.95rem;
+}
+
+
+/* GitHub profile card */
+
+.github-profile {
+  min-height: 120px;
+  padding: 2rem 2.25rem;
+  gap: 1.75rem;
+}
+
+.github-profile__icon {
+  width: 68px;
+  height: 68px;
+}
+
+.github-profile__icon svg {
+  width: 34px;
+  height: 34px;
+}
+
+.github-profile__content h3 {
+  font-size: 1.35rem;
+}
+
+.github-profile__content p {
+  font-size: 0.82rem;
+}
+
+.github-profile__button {
+  min-width: 155px;
+}
+
+
+/* Repository heading */
+
+.github-repositories {
+  margin-top: 3.5rem;
+}
+
+.github-repositories__heading {
+  margin-bottom: 1.5rem;
+}
+
+.github-repositories__heading h3 {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+}
+
+
+/* Repository grid */
+
+.github-repositories__grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.github-repo {
+  min-height: 255px;
+  padding: 1.6rem;
+}
+
+.github-repo h4 {
+  font-size: 1rem;
+}
+
+.github-repo > p {
+  font-size: 0.8rem;
+  line-height: 1.75;
+}
+
+
+/* Technologies */
+
+.github-interests {
+  margin-top: 3rem;
+  padding-top: 2rem;
+}
+
+.github-interests__tags {
+  gap: 0.65rem;
+}
+
+.github-interests__tags span {
+  padding: 0.5rem 0.85rem;
+  font-size: 0.7rem;
+}
+
+
+/* =========================================================
+   CONTACT — FULL WIDTH / PREMIUM LAYOUT
+   ========================================================= */
+
+.contact {
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+
+.contact__header {
+  max-width: 900px;
+  margin-bottom: 4rem;
+}
+
+.contact__header .section-title {
+  max-width: 850px;
+}
+
+.contact__header > p {
+  max-width: 680px;
+  font-size: 1rem;
+  line-height: 1.9;
+}
+
+
+/* Main contact grid */
+
+.contact__grid {
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 4rem;
+  align-items: start;
+}
+
+
+/* Left side */
+
+.contact__left {
+  min-width: 0;
+}
+
+.contact__details {
+  gap: 0.9rem;
+}
+
+.contact-card {
+  min-height: 105px;
+  padding: 1.35rem 1.5rem;
+}
+
+.contact-card__label {
+  min-width: 82px;
+  font-size: 0.62rem;
+}
+
+.contact-card__value {
+  font-size: 0.88rem;
+}
+
+.contact-card__arrow {
+  font-size: 1rem;
+}
+
+
+/* =========================================================
+   SOCIAL LINKS IN CONTACT
+   ========================================================= */
+
+.contact-socials {
+  margin-top: 2.5rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.contact-socials__heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.contact-socials__heading span:first-child {
+  color: var(--color-text-muted);
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.contact-socials__heading span:last-child {
+  color: var(--color-coral);
+  font-family: monospace;
+  font-size: 0.65rem;
+  font-weight: 700;
+}
+
+.contact-socials__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.contact-social {
+  position: relative;
+  display: flex;
+  min-height: 115px;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  color: var(--color-text);
+  text-decoration: none;
+  transition:
+    transform 250ms ease,
+    border-color 250ms ease,
+    box-shadow 250ms ease;
+}
+
+.contact-social::before {
+  position: absolute;
+  right: -30px;
+  bottom: -30px;
+  width: 75px;
+  height: 75px;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  content: '';
+  transition: transform 300ms ease;
+}
+
+.contact-social:hover {
+  transform: translateY(-5px);
+  border-color: var(--color-coral);
+  box-shadow: var(--shadow-soft);
+}
+
+.contact-social:hover::before {
+  transform: scale(1.6);
+}
+
+.contact-social__icon {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  background: var(--color-bg);
+  color: var(--color-coral);
+  font-family: monospace;
+  font-size: 0.65rem;
+  font-weight: 800;
+}
+
+.contact-social__name {
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.contact-social__arrow {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: var(--color-text-muted);
+  font-size: 0.8rem;
+  transition:
+    color 250ms ease,
+    transform 250ms ease;
+}
+
+.contact-social:hover .contact-social__arrow {
+  color: var(--color-coral);
+  transform: translate(2px, -2px);
+}
+
+
+/* =========================================================
+   CONTACT FORM
+   ========================================================= */
+
+.contact-form {
+  min-height: 100%;
+  padding: 2.25rem;
+  gap: 1.25rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+}
+
+.contact-form__intro {
+  margin-bottom: 0.5rem;
+}
+
+.contact-form__intro span {
+  display: block;
+  margin-bottom: 0.45rem;
+  color: var(--color-coral);
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.contact-form__intro p {
+  color: var(--color-text);
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.contact-form input {
+  min-height: 54px;
+}
+
+.contact-form textarea {
+  min-height: 180px;
+}
+
+.contact-form .button {
+  min-width: 160px;
+  min-height: 52px;
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+   ========================================================= */
+
+@media (min-width: 1200px) {
+
+  .github-section__header {
+    gap: 7rem;
+  }
+
+  .contact__grid {
+    gap: 5rem;
+  }
+
+  .contact-form {
+    padding: 2.5rem;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 999px) {
+
+  .github-section__header {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .github-repositories__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .contact__grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .contact__details {
+    position: static;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+  .github-section {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  .github-section__header {
+    margin-bottom: 2rem;
+  }
+
+  .github-profile {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 1.4rem;
+  }
+
+  .github-profile__button {
+    width: 100%;
+  }
+
+  .github-repositories {
+    margin-top: 2.5rem;
+  }
+
+  .github-repositories__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .github-repo {
+    min-height: auto;
+  }
+
+  .github-interests {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+
+  /* Contact */
+
+  .contact {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  .contact__header {
+    margin-bottom: 2.5rem;
+  }
+
+  .contact__grid {
+    gap: 1.25rem;
+  }
+
+  .contact-card {
+    min-height: 88px;
+    padding: 1rem;
+  }
+
+  .contact-card__label {
+    min-width: 65px;
+    font-size: 0.55rem;
+  }
+
+  .contact-card__value {
+    font-size: 0.72rem;
+  }
+
+  .contact-socials {
+    margin-top: 2rem;
+  }
+
+  .contact-socials__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-social {
+    min-height: 75px;
+    flex-direction: row;
+    align-items: center;
+    padding: 0.9rem;
+  }
+
+  .contact-social__icon {
+    flex-shrink: 0;
+  }
+
+  .contact-social__name {
+    flex: 1;
+  }
+
+  .contact-social__arrow {
+    position: static;
+  }
+
+  .contact-form {
+    padding: 1.25rem;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  .contact-form__intro p {
+    font-size: 1.15rem;
+  }
+
+  .contact-form .button {
+    width: 100%;
+  }
+
+}
+
+/* =========================================================
+   CONTACT FORM STATUS
+   ========================================================= */
+
+.contact-form .button:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.contact-form__message {
+  margin-top: 0.25rem;
+  font-size: 0.72rem;
+  line-height: 1.7;
+}
+
+.contact-form__message--success {
+  color: var(--color-text);
+}
+
+.contact-form__message--error {
+  color: var(--color-coral);
+}
+
+.contact-form__note {
+  font-size: 0.65rem;
+  line-height: 1.6;
+}

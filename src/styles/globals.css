@@ -4514,3 +4514,376 @@ p {
   font-size: 0.65rem;
   line-height: 1.6;
 }
+
+/* =========================================================
+   PHASE 12 — NAVBAR + THEME SYSTEM
+   ========================================================= */
+
+/* ---------- Theme variables ---------- */
+
+:root {
+  --theme-transition:
+    background-color 300ms ease,
+    color 300ms ease,
+    border-color 300ms ease,
+    box-shadow 300ms ease;
+}
+
+/* Light theme */
+
+:root[data-theme='light'] {
+  color-scheme: light;
+}
+
+/* Dark theme */
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+
+  --color-bg: #151515;
+  --color-surface: #1e1e1e;
+  --color-surface-soft: #252525;
+
+  --color-text: #f5f1eb;
+  --color-text-muted: #aaa39b;
+
+  --color-border: rgba(255, 255, 255, 0.13);
+
+  --shadow-soft:
+    0 18px 45px rgba(0, 0, 0, 0.28);
+}
+
+/* Smooth theme transition */
+
+html,
+body,
+button,
+input,
+textarea,
+section,
+article,
+nav,
+header {
+  transition: var(--theme-transition);
+}
+
+
+/* =========================================================
+   NAVBAR
+   ========================================================= */
+
+.navbar {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  right: 0;
+  left: 0;
+  padding: 0.9rem 1rem;
+  background: color-mix(
+    in srgb,
+    var(--color-bg) 86%,
+    transparent
+  );
+  border-bottom: 1px solid var(--color-border);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.navbar__inner {
+  width: min(
+    calc(100% - 1rem),
+    var(--container-width)
+  );
+  min-height: 58px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+
+/* ---------- Logo ---------- */
+
+.navbar__logo {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  place-items: center;
+
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+
+  background: var(--color-surface);
+  color: var(--color-text);
+
+  cursor: pointer;
+}
+
+.navbar__logo span {
+  color: var(--color-coral);
+  font-family: monospace;
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: -0.08em;
+}
+
+.navbar__logo:hover {
+  border-color: var(--color-coral);
+  transform: rotate(-6deg);
+}
+
+
+/* ---------- Navigation ---------- */
+
+.navbar__links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+}
+
+.navbar__link {
+  padding: 0.55rem 0.65rem;
+
+  border: 0;
+  background: transparent;
+
+  color: var(--color-text-muted);
+  font-family: inherit;
+  font-size: 0.68rem;
+  font-weight: 700;
+
+  cursor: pointer;
+  transition:
+    color 200ms ease,
+    transform 200ms ease;
+}
+
+.navbar__link:hover {
+  color: var(--color-text);
+  transform: translateY(-1px);
+}
+
+
+/* ---------- Actions ---------- */
+
+.navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+
+/* ---------- Theme ---------- */
+
+.navbar__theme {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+
+  min-height: 38px;
+  padding: 0.45rem 0.7rem;
+
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+
+  background: var(--color-surface);
+  color: var(--color-text-muted);
+
+  font-family: inherit;
+  font-size: 0.64rem;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    border-color 200ms ease,
+    color 200ms ease,
+    transform 200ms ease;
+}
+
+.navbar__theme:hover {
+  border-color: var(--color-coral);
+  color: var(--color-text);
+  transform: translateY(-1px);
+}
+
+.navbar__theme-icon {
+  color: var(--color-coral);
+  font-size: 0.8rem;
+  line-height: 1;
+}
+
+
+/* ---------- Mobile Menu Button ---------- */
+
+.navbar__menu {
+  display: none;
+
+  width: 42px;
+  height: 42px;
+
+  place-items: center;
+
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+
+  background: var(--color-surface);
+  cursor: pointer;
+}
+
+.navbar__menu span {
+  display: block;
+  width: 16px;
+  height: 1px;
+
+  background: var(--color-text);
+
+  transition:
+    transform 250ms ease,
+    opacity 250ms ease;
+}
+
+.navbar__menu {
+  gap: 5px;
+}
+
+.navbar__menu--open span:first-child {
+  transform: translateY(3px) rotate(45deg);
+}
+
+.navbar__menu--open span:last-child {
+  transform: translateY(-3px) rotate(-45deg);
+}
+
+
+/* =========================================================
+   DESKTOP
+   ========================================================= */
+
+@media (min-width: 1000px) {
+
+  .navbar {
+    padding: 1rem 2rem;
+  }
+
+  .navbar__inner {
+    width: min(
+      calc(100% - 2rem),
+      var(--container-width)
+    );
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE NAVIGATION
+   ========================================================= */
+
+@media (max-width: 899px) {
+
+  .navbar__inner {
+    position: relative;
+  }
+
+  .navbar__menu {
+    display: grid;
+  }
+
+  .navbar__links {
+    position: absolute;
+    top: calc(100% + 0.75rem);
+    right: 0;
+    left: 0;
+
+    display: none;
+
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.25rem;
+
+    padding: 0.75rem;
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+
+    background: var(--color-surface);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .navbar__links--open {
+    display: flex;
+  }
+
+  .navbar__link {
+    width: 100%;
+    padding: 0.9rem 1rem;
+
+    border-radius: 0.6rem;
+
+    text-align: left;
+    font-size: 0.76rem;
+  }
+
+  .navbar__link:hover {
+    background: var(--color-surface-soft);
+    transform: none;
+  }
+
+  .navbar__theme-text {
+    display: none;
+  }
+
+  .navbar__theme {
+    width: 38px;
+    height: 38px;
+    justify-content: center;
+    padding: 0;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+
+}
+
+/* =========================================================
+   NAVBAR OFFSET — KEEP HERO CONTENT BELOW FIXED NAVBAR
+   ========================================================= */
+
+.hero {
+  padding-top: 9rem;
+}
+
+@media (min-width: 768px) {
+  .hero {
+    padding-top: 11rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .hero {
+    padding-top: 12rem;
+  }
+}
